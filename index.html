@@ -7,15 +7,23 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Will not work as vue is not controlling -->
+    <h1>{{ name }}</h1>
    <div id="app">
-        <div>
+    <h2>{{ count }}</h2>
+    <div class="class1 class2" v-on:click="test">
             <label for="task">Task</label>
             <input type="text" id="task">
-            <button>Add Task</button>
+            <button v-on:click.stop="add(10)">Add</button>
+            <button v-on:click.right="remove(5)">Remove</button>
         </div>
         <ul>
 
-        </ul>
+        </ul> 
+        <form v-on:submit.prevent.stop="test">
+            <input>
+            <button>Submit</button>
+        </form>   
    </div>
    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
    <script src="app.js"></script>

@@ -15,13 +15,24 @@
 // $buttonEl.addEventListener('click', handleClick);
 const { createApp } = Vue;
 
-createApp({
+const app = createApp({
     data() {
       return {
-        enteredValue: ''
+        count: 0,
+        name: 'John Doe'
       }
     },
     methods: {
-        
+        add(num) {
+          this.count += num;
+        },
+        remove(num) {
+          this.count -= num;
+        },
+        test(){
+          alert();
+        }
     }
 });
+
+app.mount('#app');
