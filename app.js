@@ -18,19 +18,19 @@ const { createApp } = Vue;
 const app = createApp({
     data() {
       return {
-        count: 0,
-        name: 'John Doe'
+        firstName: '',
+        lastName: '',
       }
     },
+    computed: {
+        fullName() {
+          return `${this.firstName} ${this.lastName}`;
+        }
+    },
     methods: {
-        add(num) {
-          this.count += num;
-        },
-        remove(num) {
-          this.count -= num;
-        },
-        test(){
-          alert();
+        reset() {
+          this.firstName = '';
+          this.lastName = '';
         }
     }
 });
