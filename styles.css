@@ -23,7 +23,22 @@ label, input {
 
 label {
     font-size: 1.6rem;
+}
+label.bold {
     font-weight: bold;
+}
+label.error {
+    color: red;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+.buttons input {
+    width: auto;
 }
 
 button {
