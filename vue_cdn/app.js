@@ -1,4 +1,5 @@
 const { createApp } = Vue;
+// const createApp = Vue.createApp;
 
 const app = createApp({
     data() {
@@ -39,8 +40,12 @@ const app = createApp({
     },
     methods: {
         add() {
-          this.contacts.push(this.fullName);
-          this.reset();
+          const firstName = this.$refs.firstName.value;
+
+          console.log(firstName);
+
+          // this.contacts.push(this.fullName);
+          //this.reset();
         },
         remove(index) {
           this.contacts.splice(index, 1);
@@ -51,6 +56,19 @@ const app = createApp({
           this.fullName = '';
         }
     }
+});
+
+app.component('CustomTag', {
+  template: `
+    <h2>Hello World</h2>
+  `,
+  data() {
+      return {
+        firstName: '',
+        lastName: '',
+      }
+    },
+  
 });
 
 app.mount('#app');

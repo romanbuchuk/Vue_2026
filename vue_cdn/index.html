@@ -13,9 +13,10 @@
 
     <div>
             <label for="firstName" :class="firstNameClass">First Name</label>
-            <input type="text" v-model="firstName" id="firstName">
-             <label for="lastName" :class="lastNameClass">Last Name</label>
+            <input type="text" id="firstName" ref="firstName">
+            <label for="lastName" :class="lastNameClass">Last Name</label>
             <input type="text" v-model="lastName">
+
             <div>
                 <div class="buttons">
                     <button @click="add">Add</button>
@@ -33,6 +34,7 @@
                 <p>{{ contact }} - {{index}}</p>
             </li>
         </ul>
+        <custom-tag></custom-tag>
    </div>
    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
    <script src="app.js"></script>
